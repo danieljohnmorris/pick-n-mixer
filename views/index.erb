@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Pick n' Mixing</title>
+		<link rel="stylesheet" href="main.css" type="text/css" media="screen" charset="utf-8">
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.media.js" type="text/javascript" charset="utf-8"></script>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<h1>Pix n' Mixer - Track constructor</h1>
+		<form action="/" method="get">
+			<p>Track A: <input type="text" class="track-name" name="tracka" id="tracka" value="<%= params[:tracka] || "/Users/dan/Music/BillieJean.mp3" %>"></p>
+			<p>Track B: <input type="text" class="track-name" name="trackb" id="trackb" value="<%= params[:trackb] || "/Users/dan/Music/TeganAndSaraBackInYourHead.mp3" %>"></p>
+			<p>Track C: <input type="text" class="track-name" name="trackc" id="trackc" value="<%= params[:trackc] || "/Users/dan/Music/EbonyBonesTheMuzik.mp3" %>"></p>
+			<p>BPM: <input type="text" class="small" name="bpm" id="bpm" value="<%= params[:bpm] || "140" %>"></p>
+			<textarea id="data" name="data"></textarea>
+				
+			<div class="buttons">
+				<input type="submit" id="resample-button" name="resample-button" value="Resample audio!"/>
+				<input type="button" id="render-button" name="render-button" value="Render audio!"/>
+				<span id="mix-play"></span>
+			</div>
+		</form>
+
+		<div class="container" id="container-a"></div>
+		<div class="container" id="container-b"></div>
+		<div class="container" id="container-c"></div>
+
+		<div class="store">	
+			<div id="track"></div>
+			<div id="song"></div>
+		</div>
+	</body>
+</html>
